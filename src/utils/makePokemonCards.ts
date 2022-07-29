@@ -15,6 +15,8 @@ export default function makePokemonCards(num: number): PokemonCard[] {
             }
             ));
     }
+    
+    // console.log(pokemonArray)
     return pokemonArray;
 }
 

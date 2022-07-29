@@ -21,3 +21,14 @@ export interface PokemonCard {
     turnNumber: number;
     setTurnNumber: React.Dispatch<React.SetStateAction<number>>;
   }
+
+  export interface PlayCommentaryProps {
+    newTurn: boolean;
+    setNewTurn: React.Dispatch<React.SetStateAction<boolean>>;
+    compIndex: number;
+    setCompIndex: React.Dispatch<React.SetStateAction<number>>;
+    userIndex: number;
+    setUserIndex: React.Dispatch<React.SetStateAction<number>>;
+    turnNumber: number;
+    setTurnNumber: React.Dispatch<React.SetStateAction<number>>;
+  }
