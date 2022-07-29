@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {PokemonCard} from './types'
 import makePokemonCards from './utils/makePokemonCards'
-import DisplayCard from "./DisplayCard";
 import GamePlay from "./GamePlay";
 
 function App(): JSX.Element {
@@ -13,28 +12,35 @@ function App(): JSX.Element {
   const [compIndex, setCompIndex] = useState<number>(0);
   const [userIndex, setUserIndex] = useState<number>(0);
   const [turnNumber, setTurnNumber] = useState<number>(1);
+  const [latestWinner, setLatestWinner] = useState<'user' | 'comp' | ''>('');
+  const [currentChoice, setCurrentChoice] = useState<'hp' | 'attack' | 'defense' | 'speed'>('hp');
+  const [userCurrentCard, setUserCurrentCard] = useState<PokemonCard>({name: '', img:'', hp:0, attack: 0, defense: 0, speed: 0})
 
   const handleStart = () => {
     setCompCards(initialCompCards)
     setUserCards(initialUserCards);
+    setUserCurrentCard(initialUserCards[0])
   };
   
-  if ((compCards.length + userCards.length) > 0) {
-    console.log('help')
-  return (
-    <>
-      <GamePlay compCards={compCards} setCompCards={setCompCards} userCards={userCards} setUserCards={setUserCards} newTurn={newTurn} setNewTurn={setNewTurn} compIndex={compIndex} setCompIndex={setCompIndex} userIndex={userIndex} setUserIndex={setUserIndex} turnNumber={turnNumber} setTurnNumber={setTurnNumber}/>
-      {/* <p>First card:</p>
-      <DisplayCard {...userCards[userIndex]} /> */}
-      {/* {userCards.map((card, i) => <DisplayCard key={i} {...card}/>)}
-      <DisplayCard {...{name: 'me', img: 'dd', hp: 1, attack: 1, defense: 1, speed: 1}} /> */}
-    </>
-  )
-  } else {
+  if (compCards.length + userCards.length === 0) {
     return (
       <p onClick={handleStart}>Start</p>
     )
+  } else if ((compCards.length === 40) || (userCards.length === 40)) {
+    let overallWinner = '';
+    (compCards.length === 40) ? overallWinner = 'comp' : overallWinner = 'user'
+    return (
+      <div className='overall-winner'>
+        <h1>The winner is: {overallWinner}!</h1>
+      </div>
+    )
+  } else {
+    return (
+      <>
+        <GamePlay compCards={compCards} setCompCards={setCompCards} userCards={userCards} setUserCards={setUserCards} newTurn={newTurn} setNewTurn={setNewTurn} compIndex={compIndex} setCompIndex={setCompIndex} userIndex={userIndex} setUserIndex={setUserIndex} turnNumber={turnNumber} setTurnNumber={setTurnNumber} latestWinner={latestWinner} setLatestWinner={setLatestWinner} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} userCurrentCard={userCurrentCard} setUserCurrentCard={setUserCurrentCard}/>
+      </>
+    )
   }
-}
+  }
 
 export default App;
