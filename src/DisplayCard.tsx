@@ -4,7 +4,7 @@ export default function DisplayCard({name, img, hp, attack, defense, speed}: Pok
     return (
         <div className='pokemon-card'>
             <p>{name}</p>
-            <img src={img} alt={name} />
+            <img className='pokemon-card-img' src={img} alt={name} />
             <p>hp: {hp}</p>
             <p>attack: {attack}</p>
             <p>defense: {defense}</p>

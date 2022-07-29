@@ -7,14 +7,20 @@ import PlayCommentary from "./PlayCommentary"
 export default function GamePlay({compCards, setCompCards, userCards, setUserCards, newTurn, setNewTurn, compIndex, setCompIndex, userIndex, setUserIndex, turnNumber, setTurnNumber, latestWinner, setLatestWinner, currentChoice, setCurrentChoice}: GamePlayProps): JSX.Element{
     return (
         <>
-            <p>Computer cards: {compCards.length}</p>
-            {newTurn ? <HiddenCard /> : <DisplayCard {...compCards[compIndex]} />}
-            <p>Number of turns: {turnNumber}</p>
-            <PlayCommentary compCards={compCards} setCompCards={setCompCards} userCards={userCards} setUserCards={setUserCards} newTurn={newTurn} setNewTurn={setNewTurn} compIndex={compIndex} setCompIndex={setCompIndex} userIndex={userIndex} setUserIndex={setUserIndex} turnNumber={turnNumber} setTurnNumber={setTurnNumber} latestWinner={latestWinner} setLatestWinner={setLatestWinner} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} />
-            <p>User cards: {userCards.length}</p>
-            <DisplayCard {...userCards[userIndex]} />
-            {/*-check if it is the user's turn*/}
-            {(turnNumber % 2 !== 0) && <Options setNewTurn={setNewTurn} setCurrentChoice={setCurrentChoice}/>}
+            <p id='comp-count'>Computer cards: {compCards.length}</p>
+            <div id='comp-card'>
+                {newTurn ? <HiddenCard /> : <DisplayCard {...compCards[compIndex]} />}
+            </div>
+            <p id='turn-number'>Turn number: {turnNumber}</p>
+            <div id='play-commentary'>
+                <PlayCommentary compCards={compCards} setCompCards={setCompCards} userCards={userCards} setUserCards={setUserCards} newTurn={newTurn} setNewTurn={setNewTurn} compIndex={compIndex} setCompIndex={setCompIndex} userIndex={userIndex} setUserIndex={setUserIndex} turnNumber={turnNumber} setTurnNumber={setTurnNumber} latestWinner={latestWinner} setLatestWinner={setLatestWinner} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} />
+                {/*-check if it is the user's turn*/}
+                {((turnNumber % 2 !== 0) && (newTurn)) && <Options setNewTurn={setNewTurn} setCurrentChoice={setCurrentChoice}/>}
+            </div>
+            <p id='user-count'>User cards: {userCards.length}</p>
+            <div id='user-card'>
+                <DisplayCard {...userCards[userIndex]} />
+            </div>
         </>
     )
 }

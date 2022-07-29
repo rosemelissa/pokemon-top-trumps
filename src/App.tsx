@@ -22,7 +22,9 @@ function App(): JSX.Element {
   
   if (compCards.length + userCards.length === 0) {
     return (
-      <p onClick={handleStart}>Start</p>
+      <div id='loading-screen'>
+        <button type='button' id='start-button' onClick={handleStart}>Start</button>
+      </div>
     )
   } else if ((compCards.length === 40) || (userCards.length === 40)) {
     let overallWinner = '';
@@ -34,9 +36,9 @@ function App(): JSX.Element {
     )
   } else {
     return (
-      <>
+      <div id='gameplay'>
         <GamePlay compCards={compCards} setCompCards={setCompCards} userCards={userCards} setUserCards={setUserCards} newTurn={newTurn} setNewTurn={setNewTurn} compIndex={compIndex} setCompIndex={setCompIndex} userIndex={userIndex} setUserIndex={setUserIndex} turnNumber={turnNumber} setTurnNumber={setTurnNumber} latestWinner={latestWinner} setLatestWinner={setLatestWinner} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} />
-      </>
+      </div>
     )
   }
   }

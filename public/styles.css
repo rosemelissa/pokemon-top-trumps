@@ -1,0 +1,105 @@
+/* //#ffffff	(255,255,255)
+#fbd743	(251,215,67)yellow
+#ff1f1f	(255,31,31)red
+#5db9ff	(93,185,255)lblue
+#363b81 dblue*/
+
+body {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+#loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#start-button {
+    display: block;
+    background-color: #5db9ff;
+    border: 0px solid #5db9ff;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 50px;
+}
+
+#start-button:hover {
+    background-color: #363b81
+}
+
+button:hover {
+    background-color: #363b81;
+}
+
+button {
+    background-color: #5db9ff;
+    border: 0px solid #5db9ff;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#gameplay {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas:
+    'comp-count turn-number user-count'
+    'comp-card play-commentary user-card'
+    ;
+    place-content: center;
+    place-items: center;
+    background-color: #5db9ff;
+}
+
+.pokemon-card {
+    background-color: #ff1f1f;
+    border: 5px solid #fbd743;
+    border-radius: 5px;
+    color: white;
+    padding: 0px 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-card-img {
+    width: 96px;
+    height: 96px;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 5px solid #fbd743;
+    border-radius: 5px;
+}
+
+#comp-count {
+    grid-area: comp-count;
+}
+
+#comp-card {
+    grid-area: comp-card;
+}
+
+#turn-number {
+    grid-area: turn-number;
+}
+
+#play-commentary {
+    grid-area: play-commentary;
+    text-align: center;
+}
+
+
+#user-count {
+    grid-area: user-count;
+}
+
+#user-card {
+    grid-area: user-card;
+}
