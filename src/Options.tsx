@@ -1,6 +1,6 @@
-import { OptionsProps, PokemonCard } from "./types";
+import { OptionsProps } from "./types";
 
-export default function Options({compCards, setCompCards, userCards, setUserCards, newTurn, setNewTurn, compIndex, setCompIndex, userIndex, setUserIndex, turnNumber, setTurnNumber, latestWinner, setLatestWinner, currentChoice, setCurrentChoice}: OptionsProps): JSX.Element {
+export default function Options({setNewTurn, setCurrentChoice}: OptionsProps): JSX.Element {
     const handleHp = () => {
         setNewTurn(false);
         setCurrentChoice('hp')

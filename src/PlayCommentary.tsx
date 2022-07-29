@@ -1,7 +1,7 @@
 import { GamePlayProps } from "./types";
 import { useEffect } from "react";
 
-export default function PlayCommentary({userCards, setUserCards, compCards, setCompCards, newTurn, setNewTurn, compIndex, setCompIndex, userIndex, setUserIndex, turnNumber, setTurnNumber, latestWinner, setLatestWinner, currentChoice, setCurrentChoice, userCurrentCard, setUserCurrentCard}: GamePlayProps): JSX.Element {
+export default function PlayCommentary({userCards, setUserCards, compCards, setCompCards, newTurn, setNewTurn, compIndex, setCompIndex, userIndex, setUserIndex, turnNumber, setTurnNumber, latestWinner, setLatestWinner, currentChoice, setCurrentChoice}: GamePlayProps): JSX.Element {
     const handleTurn = () => {
         setNewTurn(false);
     }

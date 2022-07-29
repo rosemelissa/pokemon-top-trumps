@@ -14,12 +14,10 @@ function App(): JSX.Element {
   const [turnNumber, setTurnNumber] = useState<number>(1);
   const [latestWinner, setLatestWinner] = useState<'user' | 'comp' | ''>('');
   const [currentChoice, setCurrentChoice] = useState<'hp' | 'attack' | 'defense' | 'speed'>('hp');
-  const [userCurrentCard, setUserCurrentCard] = useState<PokemonCard>({name: '', img:'', hp:0, attack: 0, defense: 0, speed: 0})
 
   const handleStart = () => {
     setCompCards(initialCompCards)
     setUserCards(initialUserCards);
-    setUserCurrentCard(initialUserCards[0])
   };
   
   if (compCards.length + userCards.length === 0) {
@@ -37,7 +35,7 @@ function App(): JSX.Element {
   } else {
     return (
       <>
-        <GamePlay compCards={compCards} setCompCards={setCompCards} userCards={userCards} setUserCards={setUserCards} newTurn={newTurn} setNewTurn={setNewTurn} compIndex={compIndex} setCompIndex={setCompIndex} userIndex={userIndex} setUserIndex={setUserIndex} turnNumber={turnNumber} setTurnNumber={setTurnNumber} latestWinner={latestWinner} setLatestWinner={setLatestWinner} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} userCurrentCard={userCurrentCard} setUserCurrentCard={setUserCurrentCard}/>
+        <GamePlay compCards={compCards} setCompCards={setCompCards} userCards={userCards} setUserCards={setUserCards} newTurn={newTurn} setNewTurn={setNewTurn} compIndex={compIndex} setCompIndex={setCompIndex} userIndex={userIndex} setUserIndex={setUserIndex} turnNumber={turnNumber} setTurnNumber={setTurnNumber} latestWinner={latestWinner} setLatestWinner={setLatestWinner} currentChoice={currentChoice} setCurrentChoice={setCurrentChoice} />
       </>
     )
   }
