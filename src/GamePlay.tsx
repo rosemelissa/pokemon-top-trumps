@@ -1,4 +1,4 @@
-import { PokemonCard, GamePlayProps } from "./types";
+import { GamePlayProps } from "./types";
 import DisplayCard from "./DisplayCard";
 import HiddenCard from "./HiddenCard";
 import Options from "./Options";

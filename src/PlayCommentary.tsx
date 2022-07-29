@@ -57,7 +57,7 @@ export default function PlayCommentary({
           setLatestWinner("comp");
         }
       }
-    }
+    } // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [newTurn]);
 
   const handleNextTurn = () => {
