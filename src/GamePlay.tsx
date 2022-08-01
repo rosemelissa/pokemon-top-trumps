@@ -56,7 +56,7 @@ export default function GamePlay({
           />
         )}
       </div>
-      <p id="user-count">User cards: {userCards.length}</p>
+      <p id="user-count">Your cards: {userCards.length}</p>
       <div id="user-card">
         <DisplayCard {...userCards[userIndex]} />
       </div>

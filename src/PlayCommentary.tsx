@@ -83,7 +83,7 @@ export default function PlayCommentary({
   if (newTurn) {
     return (
       <>
-        <p>It is {turnNumber % 2 === 0 ? "computer" : "user"} 's turn</p>
+        <p>It is {turnNumber % 2 === 0 ? "computer's" : "your"} turn</p>
         {turnNumber % 2 === 0 && (
           <>
             <p>Computer to play</p>
@@ -96,9 +96,9 @@ export default function PlayCommentary({
     return (
       <>
         <p>
-          {turnNumber % 2 === 0 ? "computer" : "user"} played {currentChoice}
+          {turnNumber % 2 === 0 ? "Computer" : "You"} played {currentChoice}
         </p>
-        <p>{latestWinner} won!</p>
+        <p>{latestWinner === "comp" ? "Computer" : "You"} won!</p>
         <button onClick={handleNextTurn}>Next turn</button>
       </>
     );

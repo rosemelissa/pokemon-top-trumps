@@ -10,6 +10,7 @@ body {
     font-weight: bolder;
     font-size: 20px;
     color: #ffffff;
+    background-color: #5db9ff;
 }
 
 #loading-screen {
@@ -21,26 +22,32 @@ body {
 
 #start-button {
     display: block;
-    background-color: #5db9ff;
-    border: 0px solid #5db9ff;
+    text-align: center;
+    background-color: #ff1f1f;
+    border: 5px solid #ff1f1f;
     border-radius: 5px;
     color: #ffffff;
     font-size: 50px;
 }
 
 #start-button:hover {
-    background-color: #363b81
+    border: 5px solid #fbd743;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #363b81;
-}
+    border: 5px solid #fbd743;
+    cursor: pointer;}
 
 button {
-    background-color: #5db9ff;
-    border: 0px solid #5db9ff;
+    text-align: center;
+    background-color: #ff1f1f;
+    border: 5px solid #ff1f1f;
     border-radius: 5px;
     color: #ffffff;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #gameplay {
@@ -54,7 +61,6 @@ button {
     ;
     place-content: center;
     place-items: center;
-    background-color: #5db9ff;
 }
 
 .pokemon-card {
@@ -102,4 +108,12 @@ button {
 
 #user-card {
     grid-area: user-card;
+}
+
+.overall-winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
 }

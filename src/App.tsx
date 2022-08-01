@@ -30,14 +30,16 @@ function App(): JSX.Element {
         </button>
       </div>
     );
-  } else if (compCards.length === 40 || userCards.length === 40) {
-    let overallWinner = "";
-    compCards.length === 40
-      ? (overallWinner = "comp")
-      : (overallWinner = "user");
+  } else if (compCards.length === 40) {
     return (
       <div className="overall-winner">
-        <h1>The winner is: {overallWinner}!</h1>
+        <h1 id="winner">The winner is: computer!</h1>
+      </div>
+    );
+  } else if (userCards.length === 40) {
+    return (
+      <div className="overall-winner">
+        <h1 id="winner">The winner is: you!</h1>
       </div>
     );
   } else {
