@@ -86,7 +86,6 @@ export default function PlayCommentary({
         <p>It is {turnNumber % 2 === 0 ? "computer's" : "your"} turn</p>
         {turnNumber % 2 === 0 && (
           <>
-            <p>Computer to play</p>
             <button onClick={handleTurn}>Computer turn</button>
           </>
         )}
